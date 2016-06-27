@@ -1,0 +1,16 @@
+name = TrainingBlog
+description = First blog feature
+core = 7.x
+package = Features
+dependencies[] = features
+dependencies[] = text
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[field_base][] = body
+features[field_base][] = field_subtitle
+features[field_instance][] = node-blog-body
+features[field_instance][] = node-blog-field_subtitle
+features[node][] = blog
+features[views_view][] = blog_posts
+features_exclude[dependencies][ctools] = ctools

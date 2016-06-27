@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * trainingblog.features.user_permission.inc
+ * trainingconflicts.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function trainingblog_user_default_permissions() {
+function trainingconflicts_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: 'administer trainingblog status'.
@@ -17,29 +17,29 @@ function trainingblog_user_default_permissions() {
     'module' => 'trainingblog',
   );
 
-  // Exported permission: 'create blog content'.
-  $permissions['create blog content'] = array(
-    'name' => 'create blog content',
+  // Exported permission: 'create article content'.
+  $permissions['create article content'] = array(
+    'name' => 'create article content',
     'roles' => array(
-      'Trainingblogger' => 'Trainingblogger',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
 
-  // Exported permission: 'delete any blog content'.
-  $permissions['delete any blog content'] = array(
-    'name' => 'delete any blog content',
+  // Exported permission: 'delete any article content'.
+  $permissions['delete any article content'] = array(
+    'name' => 'delete any article content',
     'roles' => array(
-      'Trainingblogger' => 'Trainingblogger',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
 
-  // Exported permission: 'edit any blog content'.
-  $permissions['edit any blog content'] = array(
-    'name' => 'edit any blog content',
+  // Exported permission: 'edit any page content'.
+  $permissions['edit any page content'] = array(
+    'name' => 'edit any page content',
     'roles' => array(
-      'Trainingblogger' => 'Trainingblogger',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );

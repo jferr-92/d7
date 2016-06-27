@@ -1,0 +1,14 @@
+name = TrainingConflicts
+core = 7.x
+package = Features
+dependencies[] = features
+dependencies[] = filter
+dependencies[] = node
+dependencies[] = trainingblog
+features[features_api][] = api:2
+features[user_permission][] = administer trainingblog status
+features[user_permission][] = create article content
+features[user_permission][] = delete any article content
+features[user_permission][] = edit any page content
+features[user_permission][] = use text format filtered_html
+features[user_role][] = Trainingblogger

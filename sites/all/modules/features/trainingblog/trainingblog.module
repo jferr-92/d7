@@ -5,3 +5,32 @@
  */
 
 include_once 'trainingblog.features.inc';
+
+/**
+ * Implements hook_init().
+ */
+function trainingblog_init() {
+	drupal_add_css(drupal_get_path('module', 'trainingblog') . '/trainingblog.css');
+}
+
+/**
+ * Implements hook_permission().
+ */
+function trainingblog_permission() {
+	return array(
+		'administer trainingblog status' => array(
+			'title' => t('Administer blog post status.'),
+		),
+	);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function trainingblog_form_node_form_alter(&$form, &$form_state, $form_id) {
+	//dsm($form);
+	unset($form['options']['#group']);
+	if(user_access('administer trainingblog status')) {
+		$form['options']['#access'] = TRUE;
+	}
+}
